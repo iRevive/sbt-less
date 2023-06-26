@@ -86,7 +86,8 @@
 
             mkdirp(path.dirname(sourceMapOutput), function (e) {
                 throwIfErr(e);
-                fs.writeFile(sourceMapOutput, content, "utf8", onDone);
+		const data = content ? content : "";
+                fs.writeFile(sourceMapOutput, data, "utf8", onDone);
             });
         };
 
@@ -94,7 +95,8 @@
         var writeOutput = function (content, onDone) {
             mkdirp(path.dirname(output), function (e) {
                 throwIfErr(e);
-                fs.writeFile(output, content, "utf8", onDone);
+		const data = content ? content : "";
+                fs.writeFile(output, data, "utf8", onDone);
             });
         };
 
